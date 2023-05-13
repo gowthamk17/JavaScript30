@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Type Ahead 👀</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="https://fav.farm/🔥" />
+</head>
+
+<body>
+
+  <form class="search-form">
+    <input type="text" class="search" placeholder="City or State">
+    <ul class="suggestions">
+      <li>Filter for a city</li>
+      <li>or a state</li>
+    </ul>
+  </form>
+  <script>
+    const cities = [];
+    fetch('./in.json')
+      .then(response => response.json())
+      .then(json => cities.push(...json));
+
+    function findMatches(wordToFind) {
+      return cities.filter(data => {
+        let regex = new RegExp(wordToFind, 'gi');
+        return data.city.match(regex) || data.state.match(regex);
+      });
+    }
+
+    function formatNumbers(x) {
+      return x.toString().replace(/\B(?=(?:(\d\d)+(\d)(?!\d))+(?!\d))/g, ',');
+
+    }
+
+    function displayMatches() {
+      const matchArray = findMatches(this.value);
+      const html = matchArray.map(place => {
+        const regex = new RegExp(this.value, 'gi');
+        const cityName = place.city.replace(regex, `<span class="hl">${this.value}</span>`);
+        const stateName = place.state.replace(regex, `<span class="hl">${this.value}</span>`);
+
+        return `
+          <li>
+            <span class="name">${cityName}, ${stateName}</span>
+            <span class="suggestions">${formatNumbers(place.population)}</span>
+          </li>
+        `;
+      }).join('');
+      suggestions.innerHTML = html;
+    }
+
+    const search = document.querySelector('.search');
+    const suggestions = document.querySelector('.suggestions');
+
+    // search.addEventListener('change', displayMatches);
+    search.addEventListener('keyup', displayMatches);
+
+  </script>
+</body>
+
+</html>
