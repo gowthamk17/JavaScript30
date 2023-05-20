@@ -104,6 +104,10 @@ body {
   flex-basis: 50%;
 }
 
+.fullscreen {
+  background-color: black;
+}
+
 /* unholy css to style input type="range" */
 
 input[type=range] {
