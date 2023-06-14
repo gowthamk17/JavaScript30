@@ -4,7 +4,7 @@
 
 This is javascript course i done building 30 JS applications.
 
-For live demo of the applications visit [gowthamk17.github.io/JavaScript30](https://gowthamk17.github.io/JavaScript30/)
+Live Demo Links
 
 [1. Drum-Kit](https://gowthamk17.github.io/JavaScript30/Drum-Kit)
 
