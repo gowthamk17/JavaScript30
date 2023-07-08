@@ -12,15 +12,6 @@ Live Demo Links
 
 [3. Clock](https://gowthamk17.github.io/JavaScript30/Clock)
 
-[4. Key-Sequence-Detection](https://gowthamk17.github.io/JavaScript30/Key-Sequence-Detection)
-
-[3. Clock](https://gowthamk17.github.io/JavaScript30/Clock)
-
-[3. Clock](https://gowthamk17.github.io/JavaScript30/Clock)
-
-[3. Clock](https://gowthamk17.github.io/JavaScript30/Clock)
-
-
 ---
 
 # Found the course at [https://JavaScript30.com](https://JavaScript30.com)
